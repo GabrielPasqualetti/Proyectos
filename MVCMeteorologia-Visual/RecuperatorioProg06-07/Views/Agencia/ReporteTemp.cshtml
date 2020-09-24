@@ -1,0 +1,25 @@
+﻿@model List<RecuperatorioProg06_07.Models.DTOTempMaxima>
+@{
+    ViewBag.Title = "Reportes";
+}
+
+<h2>Reportes</h2>
+
+<hr />
+
+<h3>Cantidad de lavados por tipo</h3>
+<table class="table table-bordered table-striped">
+    <tr>
+        <th>Nombre de la Estacion</th>
+        <th>Temperatura Maxima</th>
+        
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.nombre</td>
+            <td>@item.MaximaTemperatura</td>
+            
+        </tr>
+    }
+</table>

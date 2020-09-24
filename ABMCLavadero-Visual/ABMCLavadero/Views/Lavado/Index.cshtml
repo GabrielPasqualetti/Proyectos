@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+@model List<ABMCLavadero.Models.DTOLavado>
+
+
+
+<h2>Listado de Lavados</h2>
+<table class="table table-striped">
+    <tr>
+        <th>Patente</th>
+        <th>Es Taxi</th>
+        <th>Es Cliente Habitual</th>
+        <th>Tipo de Lavado</th>
+        <th>Precio</th>
+        <th>Acciones</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>@item.Patente</td>
+
+        @if(item.Taxi) { <td>Si</td> } else { <td>No</td> }
+        @if(item.Habitual) { <td>Si</td> } else { <td>No</td> }
+        <td>@item.Nombre</td>
+        <td>@item.Precio</td>
+        <td>
+            <a href="/Lavado/Edicion?idLavado=@item.Id" class="btn btn-success">Editar</a>
+            <a href="/Lavado/Eliminar?idLavado=@item.Id" class="btn btn-warning">Eliminar</a>
+        </td>
+    </tr>
+    }
+</table>
+

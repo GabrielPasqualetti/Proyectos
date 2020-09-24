@@ -1,0 +1,34 @@
+﻿@model List<RecuperatorioProg06_07.Models.DTOAgencia>
+@{
+    ViewBag.Title = "Index";
+
+}
+
+
+
+<h2>Listado Mediciones</h2>
+
+<table class="table table-bordered table-striped">
+    <tr>
+        <th>Dia</th>
+        <th>Nombre Estacion</th>
+        <th>Temperatura</th>
+        <th>Humedad</th>
+        
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.dia</td>
+
+            <td>@item.nombre</td>
+
+            <td>@item.temperatura</td>
+
+            <td>@item.humedad</td>
+           
+        </tr>
+    }
+
+</table>
+

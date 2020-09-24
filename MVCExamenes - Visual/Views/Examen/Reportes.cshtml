@@ -1,0 +1,27 @@
+﻿@model List<FinalProgIII.Models.DTOPromNota>
+@{
+    ViewBag.Title = "Reportes";
+}
+
+<h2>Reportes</h2>
+
+<hr />
+
+<h3>Reporte de aprobados por materia</h3>
+<table class="table table-bordered table-striped">
+    <tr>
+        
+        <th>Nivel </th>
+        <th>Promedio Notas Aprobadas</th>
+        <th>Cantidad Aprobados</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            
+            <td>@item.nivel</td>
+            <td>@item.Promedio</td>
+            <td>@item.CantidadAprobados</td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,32 @@
+﻿@model FinalProgIII.Models.VMExamenes
+@{
+    ViewBag.Title = "Alta";
+
+}
+
+<h2>Alta Examenes </h2>
+
+
+
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        @using (Html.BeginForm())
+        {
+            <div class="form-group">
+                <label>Fecha examen </label>
+                @Html.TextBoxFor(x => x.examenModel.fecha, htmlAttributes: new { @class = "form-control", @id = "txtDia" })
+            </div>
+            <div class="Materia">
+                <label>Nombre de la Materia: </label>
+                @Html.DropDownListFor(x => x.examenModel.Idmateria, new SelectList(Model.materiaModel, "Id", "nombre"), "SELECCIONE", htmlAttributes: new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label>Nota: </label>
+                @Html.TextBoxFor(x => x.examenModel.nota, htmlAttributes: new { @class = "form-control", @id = "txtTemperatura" })
+            </div>
+            <input type="submit" value="Aceptar" class="btn btn-primary" />
+        }
+    </div>
+    <div class="col-md-2"></div>
+</div>

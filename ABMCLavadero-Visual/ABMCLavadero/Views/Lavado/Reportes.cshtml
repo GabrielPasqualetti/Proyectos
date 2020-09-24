@@ -1,0 +1,35 @@
+﻿@using ABMCLavadero.Models
+
+@{
+    ViewBag.Title = "Reportes";
+}
+
+@model VMReportes
+
+<h2>Reportes</h2>
+
+<hr />
+
+<h3>Cantidad de lavados por tipo</h3>
+<table class="table table-striped">
+    <tr>
+        <th>Tipo de Lavado</th>
+        <th>Cantidad</th>
+    </tr>
+    @foreach (var item in Model.CantidadPorTipo)
+    {
+        <tr>
+            <td>@item.Nombre</td>
+            <td>@item.Cantidad</td>
+        </tr>
+    }
+</table>
+<br />
+<h3>Último taxi habitual</h3>
+<table class="table table-striped">
+    <tr>
+        <th>Patente: @Model.UltimoLavado.Patente</th>
+        <th>Tipo de Lavado: @Model.UltimoLavado.Nombre</th>
+        <th>Precio: @Model.UltimoLavado.Precio</th>
+    </tr>
+</table>
